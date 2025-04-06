@@ -1,4 +1,4 @@
-
+<!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
@@ -10,32 +10,33 @@
       box-sizing: border-box;
     }
 
-    body {
+    html, body {
+      height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to bottom, #e3f2fd, #f8f9fa);
-      color: #333;
-      line-height: 1.6;
+      background: linear-gradient(45deg, #e0f7fa, #f3e5f5);
+      scroll-behavior: smooth;
     }
 
     header {
-      background-color: #0d47a1;
+      background: linear-gradient(to right, #6a11cb, #2575fc);
       color: white;
-      padding: 30px 20px;
+      padding: 40px 20px;
       text-align: center;
     }
 
     nav {
-      background-color: #1976d2;
+      background-color: #1e88e5;
       display: flex;
       justify-content: center;
-      padding: 10px;
+      padding: 12px 0;
     }
 
     nav a {
       color: white;
-      margin: 0 15px;
       text-decoration: none;
+      margin: 0 20px;
       font-weight: bold;
+      font-size: 16px;
     }
 
     nav a:hover {
@@ -43,101 +44,102 @@
     }
 
     main {
-      max-width: 1000px;
-      margin: 20px auto;
-      padding: 20px;
-      background: white;
-      border-radius: 12px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      max-width: 1200px;
+      margin: 30px auto;
+      padding: 30px;
+      background-color: white;
+      border-radius: 16px;
+      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
     }
 
     section {
-      margin-bottom: 60px;
+      margin-bottom: 80px;
     }
 
     h2 {
-      color: #0d47a1;
-      margin-bottom: 20px;
+      color: #2c3e50;
+      margin-bottom: 25px;
     }
 
     form label {
       display: block;
-      margin: 10px 0 5px;
+      margin-top: 15px;
       font-weight: bold;
+      color: #333;
     }
 
     input[type="text"] {
       width: 100%;
-      padding: 10px;
-      border: 2px solid #90caf9;
-      border-radius: 6px;
-      margin-bottom: 15px;
+      padding: 12px;
+      border: 2px solid #a5d6a7;
+      border-radius: 8px;
+      margin-top: 5px;
       font-size: 15px;
     }
 
     input[type="submit"] {
-      background-color: #2196f3;
+      background-color: #43a047;
       color: white;
+      padding: 14px 20px;
       border: none;
-      padding: 12px 20px;
-      border-radius: 6px;
-      cursor: pointer;
+      border-radius: 8px;
+      margin-top: 20px;
       font-size: 16px;
+      cursor: pointer;
     }
 
     input[type="submit"]:hover {
-      background-color: #1565c0;
+      background-color: #2e7d32;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 20px;
+      margin-top: 30px;
     }
 
     th, td {
-      padding: 12px 15px;
-      border-bottom: 1px solid #ccc;
+      border-bottom: 1px solid #ddd;
+      padding: 15px;
+      text-align: left;
     }
 
     th {
-      background-color: #64b5f6;
+      background-color: #00acc1;
       color: white;
     }
 
     tr:hover {
-      background-color: #f1f1f1;
+      background-color: #f1f8e9;
     }
 
-    .gallery {
+    .images {
       display: flex;
-      gap: 20px;
+      justify-content: space-around;
+      margin: 40px 0;
       flex-wrap: wrap;
-      margin-top: 30px;
     }
 
-    .gallery img {
-      width: 100%;
-      max-width: 300px;
+    .images img {
+      max-width: 100%;
+      width: 350px;
+      height: auto;
+      margin: 10px;
       border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.1);
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
       transition: transform 0.3s;
     }
 
-    .gallery img:hover {
+    .images img:hover {
       transform: scale(1.05);
     }
 
     footer {
-      text-align: center;
-      padding: 30px;
-      background-color: #0d47a1;
+      background-color: #2c3e50;
       color: white;
+      padding: 25px;
+      text-align: center;
       margin-top: 50px;
-    }
-
-    html {
-      scroll-behavior: smooth;
     }
   </style>
 </head>
@@ -145,16 +147,22 @@
 
   <header>
     <h1>Employee Management System</h1>
+    <p>Manage your team efficiently and with style</p>
   </header>
 
   <nav>
     <a href="#add">Add Employee</a>
-    <a href="#list">Employee Records</a>
-    <a href="#gallery">Gallery</a>
+    <a href="#records">Employee Records</a>
     <a href="#about">About</a>
   </nav>
 
   <main>
+    <div class="images">
+      <img src="https://source.unsplash.com/400x250/?office,work" alt="Office">
+      <img src="https://source.unsplash.com/401x250/?employees,team" alt="Team">
+      <img src="https://source.unsplash.com/402x250/?business,people" alt="People Working">
+    </div>
+
     <section id="add">
       <h2>Add New Employee</h2>
       <form id="employeeForm">
@@ -170,11 +178,14 @@
         <label for="role">Role</label>
         <input type="text" id="role" required>
 
+        <label for="salary">Salary (₹)</label>
+        <input type="text" id="salary" required>
+
         <input type="submit" value="Add Employee">
       </form>
     </section>
 
-    <section id="list">
+    <section id="records">
       <h2>Employee Records</h2>
       <table id="employeeTable">
         <thead>
@@ -183,6 +194,7 @@
             <th>Employee ID</th>
             <th>Department</th>
             <th>Role</th>
+            <th>Salary (₹)</th>
           </tr>
         </thead>
         <tbody>
@@ -191,31 +203,23 @@
             <td>EMP101</td>
             <td>Finance</td>
             <td>Accountant</td>
+            <td>₹45,000</td>
           </tr>
         </tbody>
       </table>
     </section>
 
-    <section id="gallery">
-      <h2>Our Team Moments</h2>
-      <div class="gallery">
-        <img src="https://source.unsplash.com/300x200/?office,team" alt="Team 1">
-        <img src="https://source.unsplash.com/301x200/?workplace,meeting" alt="Team 2">
-        <img src="https://source.unsplash.com/302x200/?corporate,people" alt="Team 3">
-      </div>
-    </section>
-
     <section id="about">
-      <h2>About This System</h2>
+      <h2>About This Project</h2>
       <p>
-        This is a simple Employee Management System created by <strong>Yash Devdhe</strong>, a passionate student at Government Polytechnic, Chhatrapati Sambhajinagar.
-        It is designed to help manage employees in a smooth and elegant way using only HTML, CSS, and JavaScript.
+        This system is developed by <strong>Yash Devdhe</strong>, a Diploma Computer Engineering student at Government Polytechnic, Chhatrapati Sambhajinagar.
+        The goal is to provide an elegant and simple system to manage employee data like names, roles, departments, IDs, and salaries — all in a browser without a backend.
       </p>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Yash Devdhe | All Rights Reserved
+    &copy; 2025 Yash Devdhe | Designed with 💻 and 🎨 | Government Polytechnic
   </footer>
 
   <script>
@@ -229,14 +233,15 @@
       const id = document.getElementById("empId").value;
       const dept = document.getElementById("department").value;
       const role = document.getElementById("role").value;
+      const salary = document.getElementById("salary").value;
 
       const newRow = table.insertRow();
-
       newRow.innerHTML = `
         <td>${name}</td>
         <td>${id}</td>
         <td>${dept}</td>
         <td>${role}</td>
+        <td>₹${salary}</td>
       `;
 
       form.reset();
