@@ -158,10 +158,9 @@
 
   <main>
     <div class="images">
-      <img src=""C:\Users\HP\Pictures\download (1).jpg"" alt="Team">
-      <img src=""C:\Users\HP\Documents\GitHub\Project\box7_image.jpg"" alt="Office">
-      
-      <img src=""C:\Users\HP\Pictures\download (2).jpg"" alt="People Working">
+      <img src="C:\Users\HP\Pictures\download (1).jpg" alt="Team">
+      <img src="C:\Users\HP\Documents\GitHub\Project\box7_image.jpg" alt="Office">
+      <img src="C:\Users\HP\Pictures\download (2).jpg" alt="People Working">
     </div>
 
     <section id="add">
