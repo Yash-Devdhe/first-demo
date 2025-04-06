@@ -158,9 +158,10 @@
 
   <main>
     <div class="images">
-      <img src="https://source.unsplash.com/400x250/?office,work" alt="Office">
-      <img src="https://source.unsplash.com/401x250/?employees,team" alt="Team">
-      <img src="https://source.unsplash.com/402x250/?business,people" alt="People Working">
+      <img src=""C:\Users\HP\Pictures\download (1).jpg"" alt="Team">
+      <img src=""C:\Users\HP\Documents\GitHub\Project\box7_image.jpg"" alt="Office">
+      
+      <img src=""C:\Users\HP\Pictures\download (2).jpg"" alt="People Working">
     </div>
 
     <section id="add">
