@@ -214,7 +214,7 @@
     </div>
     
     <footer>
-        <p>&copy; 2023 Employee Management System. All rights reserved.</p>
+        <p>&copy; 2025 Employee Management System.Designed by Yash Devdhe. All rights reserved.</p>
     </footer>
     
     <script>
