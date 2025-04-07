@@ -21,26 +21,11 @@
         header {
             background: linear-gradient(to right, #4b6cb7, #182848);
             color: white;
-            padding: 20px 0;
+            padding: 30px 0;
             text-align: center;
             border-radius: 0 0 10px 10px;
             box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
             margin-bottom: 30px;
-        }
-        
-        .logo-container {
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 20px;
-            margin-bottom: 15px;
-        }
-        
-        .logo-img {
-            height: 80px;
-            object-fit: contain;
-            filter: drop-shadow(2px 2px 4px rgba(0, 0, 0, 0.3));
         }
         
         h1 {
@@ -147,11 +132,6 @@
 <body>
     <header>
         <div class="container">
-            <div class="logo-container">
-                <img src="download.jpg" alt="Employee Management Logo 1" class="logo-img">
-                <img src="download (1).jpg" alt="Employee Management Logo 2" class="logo-img">
-                <img src="download (2).jpg" alt="Employee Management Logo 3" class="logo-img">
-            </div>
             <h1>Employee Management System</h1>
         </div>
     </header>
