@@ -13,30 +13,30 @@
     html, body {
       height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(45deg, #e0f7fa, #f3e5f5);
+      background: linear-gradient(to right, #fffde7, #f5f5f5);
       scroll-behavior: smooth;
     }
 
     header {
-      background: linear-gradient(to right, #6a11cb, #2575fc);
-      color: white;
+      background: linear-gradient(to right, #fdd835, #fbc02d);
+      color: #333;
       padding: 40px 20px;
       text-align: center;
     }
 
     nav {
-      background-color: #1e88e5;
+      background-color: #757575;
       display: flex;
       justify-content: center;
-      padding: 12px 0;
+      padding: 14px 0;
     }
 
     nav a {
       color: white;
       text-decoration: none;
-      margin: 0 20px;
+      margin: 0 25px;
       font-weight: bold;
-      font-size: 16px;
+      font-size: 17px;
     }
 
     nav a:hover {
@@ -48,8 +48,8 @@
       margin: 30px auto;
       padding: 30px;
       background-color: white;
-      border-radius: 16px;
-      box-shadow: 0 0 20px rgba(0, 0, 0, 0.1);
+      border-radius: 20px;
+      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
     }
 
     section {
@@ -65,31 +65,31 @@
       display: block;
       margin-top: 15px;
       font-weight: bold;
-      color: #333;
+      color: #444;
     }
 
     input[type="text"] {
       width: 100%;
       padding: 12px;
-      border: 2px solid #a5d6a7;
-      border-radius: 8px;
+      border: 2px solid #ffeb3b;
+      border-radius: 10px;
       margin-top: 5px;
-      font-size: 15px;
+      font-size: 16px;
     }
 
     input[type="submit"] {
-      background-color: #43a047;
-      color: white;
-      padding: 14px 20px;
+      background-color: #fbc02d;
+      color: #212121;
+      padding: 14px 22px;
       border: none;
-      border-radius: 8px;
+      border-radius: 10px;
       margin-top: 20px;
       font-size: 16px;
       cursor: pointer;
     }
 
     input[type="submit"]:hover {
-      background-color: #2e7d32;
+      background-color: #fdd835;
     }
 
     table {
@@ -105,12 +105,12 @@
     }
 
     th {
-      background-color: #00acc1;
+      background-color: #616161;
       color: white;
     }
 
     tr:hover {
-      background-color: #f1f8e9;
+      background-color: #fff9c4;
     }
 
     .images {
@@ -122,11 +122,11 @@
 
     .images img {
       max-width: 100%;
-      width: 350px;
+      width: 340px;
       height: auto;
-      margin: 10px;
-      border-radius: 12px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      margin: 12px;
+      border-radius: 14px;
+      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
       transition: transform 0.3s;
     }
 
@@ -135,11 +135,11 @@
     }
 
     footer {
-      background-color: #2c3e50;
+      background-color: #424242;
       color: white;
       padding: 25px;
       text-align: center;
-      margin-top: 50px;
+      margin-top: 60px;
     }
   </style>
 </head>
@@ -147,7 +147,7 @@
 
   <header>
     <h1>Employee Management System</h1>
-    <p>Manage your team efficiently and with style</p>
+    <p>Effortless employee records – designed with color and clarity!</p>
   </header>
 
   <nav>
@@ -158,9 +158,9 @@
 
   <main>
     <div class="images">
-      <img src="C:\Users\HP\Pictures\download (1).jpg" alt="Team">
-      <img src="C:\Users\HP\Documents\GitHub\Project\box7_image.jpg" alt="Office">
-      <img src="C:\Users\HP\Pictures\download (2).jpg" alt="People Working">
+      <img src="download (1).jpg" alt="Employee Icon">
+      <img src="download (2).jpg" alt="Team Management">
+      <img src="download.jpg" alt="EMS System Graphic">
     </div>
 
     <section id="add">
@@ -212,14 +212,13 @@
     <section id="about">
       <h2>About This Project</h2>
       <p>
-        This system is developed by <strong>Yash Devdhe</strong>, a Diploma Computer Engineering student at Government Polytechnic, Chhatrapati Sambhajinagar.
-        The goal is to provide an elegant and simple system to manage employee data like names, roles, departments, IDs, and salaries — all in a browser without a backend.
+        Developed by <strong>Yash Devdhe</strong>, this colorful and creative Employee Management System helps small teams manage records without needing a backend. Built using pure HTML, CSS, and JavaScript.
       </p>
     </section>
   </main>
 
   <footer>
-    &copy; 2025 Yash Devdhe | Designed with 💻 and 🎨 | Government Polytechnic
+    &copy; 2025 Yash Devdhe | Govt. Polytechnic, Chhatrapati Sambhajinagar | Employee Management System
   </footer>
 
   <script>
