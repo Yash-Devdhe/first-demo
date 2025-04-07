@@ -1,149 +1,114 @@
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Employee Management System</title>
   <style>
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
-    }
-
-    html, body {
-      height: 100%;
       font-family: 'Segoe UI', sans-serif;
-      background: linear-gradient(to right, #fffde7, #f5f5f5);
-      scroll-behavior: smooth;
     }
-
-    header {
-      background: linear-gradient(to right, #fdd835, #fbc02d);
+    body {
+      background: linear-gradient(to bottom, #fffbea, #f7f7f7);
       color: #333;
-      padding: 40px 20px;
+    }
+    header {
+      background: #fbc531;
+      padding: 30px 20px;
       text-align: center;
     }
-
-    nav {
-      background-color: #757575;
-      display: flex;
-      justify-content: center;
-      padding: 14px 0;
+    header h1 {
+      color: #2f3640;
+      font-size: 2.5rem;
     }
-
+    header p {
+      color: #444;
+      font-size: 1.2rem;
+      margin-top: 10px;
+    }
+    nav {
+      background: #636e72;
+      text-align: center;
+      padding: 15px 0;
+    }
     nav a {
       color: white;
+      margin: 0 15px;
       text-decoration: none;
-      margin: 0 25px;
       font-weight: bold;
-      font-size: 17px;
     }
-
-    nav a:hover {
-      text-decoration: underline;
+    .image-section {
+      display: flex;
+      justify-content: center;
+      gap: 30px;
+      padding: 30px 20px;
+      flex-wrap: wrap;
     }
-
-    main {
-      max-width: 1200px;
+    .image-section img {
+      width: 250px;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    }
+    .form-section, .table-section {
+      max-width: 1000px;
       margin: 30px auto;
+      background: white;
       padding: 30px;
-      background-color: white;
-      border-radius: 20px;
-      box-shadow: 0 0 25px rgba(0, 0, 0, 0.1);
+      border-radius: 15px;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.05);
     }
-
-    section {
-      margin-bottom: 80px;
+    .form-section h2, .table-section h2 {
+      margin-bottom: 20px;
+      color: #2d3436;
     }
-
-    h2 {
-      color: #2c3e50;
-      margin-bottom: 25px;
-    }
-
-    form label {
+    .form-section label {
       display: block;
-      margin-top: 15px;
-      font-weight: bold;
-      color: #444;
+      margin-bottom: 8px;
+      color: #2d3436;
     }
-
-    input[type="text"] {
+    .form-section input {
       width: 100%;
-      padding: 12px;
-      border: 2px solid #ffeb3b;
-      border-radius: 10px;
-      margin-top: 5px;
-      font-size: 16px;
+      padding: 10px;
+      border: 2px solid #fbc531;
+      border-radius: 8px;
+      margin-bottom: 15px;
     }
-
-    input[type="submit"] {
-      background-color: #fbc02d;
-      color: #212121;
-      padding: 14px 22px;
+    .form-section button {
+      background: #00cec9;
+      color: white;
+      padding: 12px 20px;
       border: none;
-      border-radius: 10px;
-      margin-top: 20px;
-      font-size: 16px;
+      border-radius: 8px;
       cursor: pointer;
+      transition: background 0.3s;
     }
-
-    input[type="submit"]:hover {
-      background-color: #fdd835;
+    .form-section button:hover {
+      background: #0984e3;
     }
-
     table {
       width: 100%;
       border-collapse: collapse;
-      margin-top: 30px;
     }
-
-    th, td {
-      border-bottom: 1px solid #ddd;
-      padding: 15px;
-      text-align: left;
-    }
-
-    th {
-      background-color: #616161;
-      color: white;
-    }
-
-    tr:hover {
-      background-color: #fff9c4;
-    }
-
-    .images {
-      display: flex;
-      justify-content: space-around;
-      margin: 40px 0;
-      flex-wrap: wrap;
-    }
-
-    .images img {
-      max-width: 100%;
-      width: 340px;
-      height: auto;
-      margin: 12px;
-      border-radius: 14px;
-      box-shadow: 0 6px 14px rgba(0,0,0,0.2);
-      transition: transform 0.3s;
-    }
-
-    .images img:hover {
-      transform: scale(1.05);
-    }
-
-    footer {
-      background-color: #424242;
-      color: white;
-      padding: 25px;
+    table th, table td {
+      border: 1px solid #ccc;
+      padding: 12px;
       text-align: center;
-      margin-top: 60px;
+    }
+    table th {
+      background: #ffeaa7;
+    }
+    footer {
+      text-align: center;
+      padding: 20px;
+      background: #2d3436;
+      color: white;
+      margin-top: 40px;
     }
   </style>
 </head>
 <body>
-
   <header>
     <h1>Employee Management System</h1>
     <p>Effortless employee records – designed with color and clarity!</p>
@@ -155,96 +120,64 @@
     <a href="#about">About</a>
   </nav>
 
-  <main>
-    <div class="images">
-      <img src="download (1).jpg" alt="Employee Icon">
-      <img src="download (2).jpg" alt="Team Management">
-      <img src="download.jpg" alt="EMS System Graphic">
-    </div>
+  <section class="image-section">
+    <img src="download (1).jpg" alt="Employee Management System 1">
+    <img src="download (2).jpg" alt="Team Collaboration">
+    <img src="download.jpg" alt="EMS Purple Graphic">
+  </section>
 
-    <section id="add">
-      <h2>Add New Employee</h2>
-      <form id="employeeForm">
-        <label for="empName">Full Name</label>
-        <input type="text" id="empName" required>
+  <section class="form-section" id="add">
+    <h2>Add New Employee</h2>
+    <label for="name">Full Name</label>
+    <input type="text" id="name" placeholder="Enter full name">
 
-        <label for="empId">Employee ID</label>
-        <input type="text" id="empId" required>
+    <label for="position">Position</label>
+    <input type="text" id="position" placeholder="Enter position">
 
-        <label for="department">Department</label>
-        <input type="text" id="department" required>
+    <label for="salary">Salary</label>
+    <input type="number" id="salary" placeholder="Enter salary">
 
-        <label for="role">Role</label>
-        <input type="text" id="role" required>
+    <button onclick="addEmployee()">Add Employee</button>
+  </section>
 
-        <label for="salary">Salary (₹)</label>
-        <input type="text" id="salary" required>
+  <section class="table-section" id="records">
+    <h2>Employee Records</h2>
+    <table>
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Position</th>
+          <th>Salary (₹)</th>
+        </tr>
+      </thead>
+      <tbody id="employeeTable"></tbody>
+    </table>
+  </section>
 
-        <input type="submit" value="Add Employee">
-      </form>
-    </section>
-
-    <section id="records">
-      <h2>Employee Records</h2>
-      <table id="employeeTable">
-        <thead>
-          <tr>
-            <th>Full Name</th>
-            <th>Employee ID</th>
-            <th>Department</th>
-            <th>Role</th>
-            <th>Salary (₹)</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td>Aarav Mehta</td>
-            <td>EMP101</td>
-            <td>Finance</td>
-            <td>Accountant</td>
-            <td>₹45,000</td>
-          </tr>
-        </tbody>
-      </table>
-    </section>
-
-    <section id="about">
-      <h2>About This Project</h2>
-      <p>
-        Developed by <strong>Yash Devdhe</strong>, this colorful and creative Employee Management System helps small teams manage records without needing a backend. Built using pure HTML, CSS, and JavaScript.
-      </p>
-    </section>
-  </main>
-
-  <footer>
-    &copy; 2025 Yash Devdhe | Govt. Polytechnic, Chhatrapati Sambhajinagar | Employee Management System
+  <footer id="about">
+    <p>© 2025 Employee Management System. Designed by Yash Devdhe.</p>
   </footer>
 
   <script>
-    const form = document.getElementById("employeeForm");
-    const table = document.getElementById("employeeTable").getElementsByTagName("tbody")[0];
-
-    form.addEventListener("submit", function(e) {
-      e.preventDefault();
-
-      const name = document.getElementById("empName").value;
-      const id = document.getElementById("empId").value;
-      const dept = document.getElementById("department").value;
-      const role = document.getElementById("role").value;
+    function addEmployee() {
+      const name = document.getElementById("name").value;
+      const position = document.getElementById("position").value;
       const salary = document.getElementById("salary").value;
 
-      const newRow = table.insertRow();
-      newRow.innerHTML = `
-        <td>${name}</td>
-        <td>${id}</td>
-        <td>${dept}</td>
-        <td>${role}</td>
-        <td>₹${salary}</td>
-      `;
+      if (name && position && salary) {
+        const table = document.getElementById("employeeTable");
+        const row = table.insertRow();
+        row.insertCell(0).innerText = name;
+        row.insertCell(1).innerText = position;
+        row.insertCell(2).innerText = `₹${salary}`;
 
-      form.reset();
-    });
+        document.getElementById("name").value = "";
+        document.getElementById("position").value = "";
+        document.getElementById("salary").value = "";
+      } else {
+        alert("Please fill all the fields!");
+      }
+    }
   </script>
-
 </body>
 </html>
