@@ -494,7 +494,7 @@
         updateStats();
     </script>
 
-        <p>&copy;Employee Management System devepoled by Yash Devdhe</p>
+        <p><center>&copy;Employee Management System devepoled by Yash Devdhe</center></p>
 
 </body>
 </html>
