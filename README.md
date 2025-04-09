@@ -509,7 +509,7 @@
         }
         
         @media (max-width: 768px) {
-
+        <p>&copy;Employee Management System devepoled by Yash Devdhe</p>
 
 </body>
 </html>
