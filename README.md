@@ -516,6 +516,5 @@
     </footer>
 
     <div id="editModal" class="modal">
-// ... existing code ...
 </body>
 </html>
