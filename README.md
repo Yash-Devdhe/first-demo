@@ -511,10 +511,5 @@
         @media (max-width: 768px) {
 
 
-    <footer>
-       &nbsp; &nbsp;&nbsp;&nbsp;&nbsp;copy; 2024 Employee Management System developed by Yash Devdhe
-    </footer>
-
-    <div id="editModal" class="modal">
 </body>
 </html>
