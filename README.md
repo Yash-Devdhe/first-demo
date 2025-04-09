@@ -1,7 +1,7 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Employee Management System</title>
   <style>
     * {
@@ -14,108 +14,126 @@
     body {
       background: #f0f2f5;
       color: #333;
-      line-height: 1.6;
     }
 
     .container {
+      width: 95%;
       max-width: 1200px;
       margin: auto;
-      padding: 20px;
+      padding: 10px;
     }
 
     header {
       background: linear-gradient(135deg, #2c3e50, #3498db);
       color: white;
-      padding: 40px 20px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+      padding: 30px 10px;
+      text-align: center;
     }
 
     h1 {
-      text-align: center;
-      font-size: 2.5em;
-      margin-bottom: 20px;
-      text-shadow: 2px 2px 4px rgba(0,0,0,0.2);
+      font-size: 2rem;
+      margin-bottom: 10px;
     }
 
     .welcome-text {
-      text-align: center;
+      font-size: 1rem;
       max-width: 800px;
-      margin: 0 auto 40px;
-      font-size: 1.2em;
-      color: #fff;
+      margin: auto;
+    }
+
+    .stats-container {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 15px;
+      margin: 20px 0;
+    }
+
+    .stat-card {
+      flex: 1;
+      min-width: 150px;
+      background: white;
+      padding: 15px;
+      border-radius: 10px;
+      text-align: center;
+      box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    }
+
+    .stat-value {
+      font-size: 1.5em;
+      color: #3498db;
     }
 
     .controls, .search-container {
       display: flex;
-      gap: 20px;
       flex-wrap: wrap;
-      margin-bottom: 30px;
+      gap: 10px;
+      margin: 15px 0;
     }
 
-    input, select, button {
-      padding: 12px;
-      border: none;
-      border-radius: 5px;
-      font-size: 1em;
-    }
-
-    input, select {
+    .controls input, .controls select, .controls button,
+    .search-container input {
       flex: 1;
-      background: white;
-      border: 1px solid #ddd;
+      padding: 10px;
+      font-size: 1em;
+      border-radius: 5px;
+      border: 1px solid #ccc;
     }
 
     button {
       background: #3498db;
       color: white;
+      border: none;
       cursor: pointer;
-      transition: all 0.3s;
-      min-width: 120px;
+      transition: background 0.3s;
     }
 
     button:hover {
       background: #2980b9;
-      transform: translateY(-2px);
-      box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+    }
+
+    .search-container {
+      position: relative;
+    }
+
+    .search-container input {
+      padding-left: 35px;
+    }
+
+    .search-icon {
+      position: absolute;
+      left: 10px;
+      top: 50%;
+      transform: translateY(-50%);
+      color: #666;
     }
 
     .employee-list {
+      overflow-x: auto;
       background: white;
       border-radius: 10px;
       box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      overflow-x: auto;
-      margin-bottom: 40px;
     }
 
     table {
       width: 100%;
       border-collapse: collapse;
-      min-width: 600px;
     }
 
     th, td {
-      padding: 15px;
-      text-align: left;
-      border-bottom: 1px solid #eee;
+      padding: 12px;
+      border-bottom: 1px solid #ddd;
     }
 
     th {
       background: #2c3e50;
       color: white;
-      position: sticky;
-      top: 0;
-    }
-
-    tr:hover {
-      background: #f8f9fa;
     }
 
     .action-btn {
-      padding: 8px 12px;
-      margin: 0 5px;
-      border-radius: 4px;
-      transition: all 0.3s;
+      padding: 5px 10px;
+      border-radius: 5px;
+      margin-right: 5px;
+      font-size: 0.9em;
     }
 
     .edit-btn {
@@ -123,122 +141,66 @@
       color: white;
     }
 
-    .edit-btn:hover {
-      background: #d35400;
-    }
-
     .delete-btn {
       background: #e74c3c;
       color: white;
     }
 
-    .delete-btn:hover {
-      background: #c0392b;
+    .about-section {
+      background: white;
+      padding: 20px;
+      margin: 20px 0;
+      border-radius: 10px;
     }
 
     .modal {
       display: none;
       position: fixed;
-      top: 0; left: 0;
-      width: 100%; height: 100%;
+      inset: 0;
       background: rgba(0,0,0,0.5);
-      z-index: 1000;
+      z-index: 999;
+      justify-content: center;
+      align-items: center;
     }
 
     .modal-content {
       background: white;
-      width: 90%;
-      max-width: 500px;
-      margin: 60px auto;
       padding: 20px;
       border-radius: 10px;
-      position: relative;
+      width: 90%;
+      max-width: 400px;
     }
 
     .close {
-      position: absolute;
-      right: 20px;
-      top: 10px;
+      float: right;
       font-size: 24px;
       cursor: pointer;
     }
 
-    .stats-container {
-      display: flex;
-      gap: 20px;
-      margin-bottom: 40px;
-      flex-wrap: wrap;
-    }
+    @media screen and (max-width: 600px) {
+      h1 {
+        font-size: 1.5rem;
+      }
 
-    .stat-card {
-      background: white;
-      padding: 20px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      flex: 1;
-      min-width: 200px;
-      text-align: center;
-    }
+      .stat-card {
+        flex: 100%;
+      }
 
-    .stat-value {
-      font-size: 2em;
-      color: #3498db;
-      font-weight: bold;
-    }
-
-    .stat-label {
-      color: #666;
-      margin-top: 10px;
-    }
-
-    .about-section {
-      background: white;
-      padding: 40px;
-      border-radius: 10px;
-      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
-      margin-bottom: 40px;
-    }
-
-    .about-section h2 {
-      color: #2c3e50;
-      margin-bottom: 20px;
-    }
-
-    .about-section p, ul {
-      color: #666;
-    }
-
-    @media (max-width: 768px) {
       .controls, .search-container {
         flex-direction: column;
       }
 
-      input, select, button {
+      .controls input, .controls button, .search-container input {
         width: 100%;
-      }
-
-      table {
-        min-width: unset;
-      }
-
-      h1 {
-        font-size: 2em;
-      }
-
-      .welcome-text {
-        font-size: 1em;
-        padding: 0 10px;
       }
     }
   </style>
 </head>
 <body>
   <header>
-    <div class="container">
-      <h1>Employee Management System</h1>
-      <div class="welcome-text">
-        Manage your team with ease. Add, update, search, and monitor employee data anytime, anywhere!
-      </div>
+    <h1>Employee Management System</h1>
+    <div class="welcome-text">
+      Manage your employees efficiently with a responsive, modern interface.
     </div>
   </header>
 
@@ -246,26 +208,27 @@
     <div class="stats-container">
       <div class="stat-card">
         <div class="stat-value" id="totalEmployees">0</div>
-        <div class="stat-label">Total Employees</div>
+        <div>Total Employees</div>
       </div>
       <div class="stat-card">
         <div class="stat-value" id="avgSalary">$0</div>
-        <div class="stat-label">Average Salary</div>
+        <div>Average Salary</div>
       </div>
       <div class="stat-card">
         <div class="stat-value" id="positions">0</div>
-        <div class="stat-label">Unique Positions</div>
+        <div>Unique Positions</div>
       </div>
     </div>
 
     <div class="controls">
-      <input type="text" id="name" placeholder="Employee Name">
+      <input type="text" id="name" placeholder="Name">
       <input type="text" id="position" placeholder="Position">
       <input type="number" id="salary" placeholder="Salary">
-      <button onclick="addEmployee()">Add Employee</button>
+      <button onclick="addEmployee()">Add</button>
     </div>
 
     <div class="search-container">
+      <span class="search-icon">🔍</span>
       <input type="text" id="search" placeholder="Search employees...">
     </div>
 
@@ -273,11 +236,7 @@
       <table>
         <thead>
           <tr>
-            <th>ID</th>
-            <th>Name</th>
-            <th>Position</th>
-            <th>Salary</th>
-            <th>Actions</th>
+            <th>ID</th><th>Name</th><th>Position</th><th>Salary</th><th>Actions</th>
           </tr>
         </thead>
         <tbody id="employeeTable"></tbody>
@@ -285,17 +244,9 @@
     </div>
 
     <div class="about-section">
-      <h2>About This System</h2>
-      <p>This system helps organizations manage employees easily with built-in search, stats, and management features. It works offline and saves data in your browser using localStorage.</p>
-      <ul>
-        <li>Easy add/edit/delete features</li>
-        <li>Mobile-friendly design</li>
-        <li>Live statistics</li>
-        <li>Persistent storage</li>
-      </ul>
+      <h2>About</h2>
+      <p>This system helps you manage employees with real-time data tracking, salary analysis, and mobile-friendly design.</p>
     </div>
-
-    <p style="text-align:center;">&copy; 2025 Employee Management System by Yash Devdhe</p>
   </div>
 
   <div id="editModal" class="modal">
@@ -303,7 +254,7 @@
       <span class="close" onclick="closeModal()">&times;</span>
       <h2>Edit Employee</h2>
       <input type="hidden" id="editId">
-      <input type="text" id="editName" placeholder="Employee Name">
+      <input type="text" id="editName" placeholder="Name">
       <input type="text" id="editPosition" placeholder="Position">
       <input type="number" id="editSalary" placeholder="Salary">
       <button onclick="updateEmployee()">Update</button>
@@ -312,24 +263,18 @@
 
   <script>
     let employees = JSON.parse(localStorage.getItem('employees')) || [];
+    const table = document.getElementById('employeeTable');
 
     function updateStats() {
       document.getElementById('totalEmployees').textContent = employees.length;
-      let total = employees.reduce((sum, emp) => sum + Number(emp.salary), 0);
-      let avg = employees.length ? Math.round(total / employees.length) : 0;
-      document.getElementById('avgSalary').textContent = "$" + avg;
-      let positions = new Set(employees.map(emp => emp.position));
-      document.getElementById('positions').textContent = positions.size;
+      const avg = employees.length ? Math.round(employees.reduce((a, b) => a + Number(b.salary), 0) / employees.length) : 0;
+      document.getElementById('avgSalary').textContent = '$' + avg;
+      document.getElementById('positions').textContent = new Set(employees.map(e => e.position)).size;
     }
 
-    function saveEmployees() {
-      localStorage.setItem('employees', JSON.stringify(employees));
-    }
-
-    function renderEmployees(data = employees) {
-      const table = document.getElementById('employeeTable');
+    function renderEmployees(list = employees) {
       table.innerHTML = '';
-      data.forEach(emp => {
+      list.forEach(emp => {
         const row = document.createElement('tr');
         row.innerHTML = `
           <td>${emp.id}</td>
@@ -337,7 +282,7 @@
           <td>${emp.position}</td>
           <td>$${emp.salary}</td>
           <td>
-            <button class="action-btn edit-btn" onclick="openEditModal(${emp.id})">Edit</button>
+            <button class="action-btn edit-btn" onclick="editEmployee(${emp.id})">Edit</button>
             <button class="action-btn delete-btn" onclick="deleteEmployee(${emp.id})">Delete</button>
           </td>`;
         table.appendChild(row);
@@ -345,15 +290,13 @@
     }
 
     function addEmployee() {
-      const name = document.getElementById('name').value;
-      const position = document.getElementById('position').value;
-      const salary = document.getElementById('salary').value;
+      const name = document.getElementById('name').value.trim();
+      const position = document.getElementById('position').value.trim();
+      const salary = document.getElementById('salary').value.trim();
       if (name && position && salary) {
-        const employee = { id: Date.now(), name, position, salary };
-        employees.push(employee);
-        saveEmployees();
-        renderEmployees();
-        updateStats();
+        const emp = { id: Date.now(), name, position, salary };
+        employees.push(emp);
+        saveAndRender();
         document.getElementById('name').value = '';
         document.getElementById('position').value = '';
         document.getElementById('salary').value = '';
@@ -361,22 +304,20 @@
     }
 
     function deleteEmployee(id) {
-      if (confirm("Are you sure?")) {
+      if (confirm('Delete this employee?')) {
         employees = employees.filter(emp => emp.id !== id);
-        saveEmployees();
-        renderEmployees();
-        updateStats();
+        saveAndRender();
       }
     }
 
-    function openEditModal(id) {
+    function editEmployee(id) {
       const emp = employees.find(e => e.id === id);
       if (emp) {
         document.getElementById('editId').value = emp.id;
         document.getElementById('editName').value = emp.name;
         document.getElementById('editPosition').value = emp.position;
         document.getElementById('editSalary').value = emp.salary;
-        document.getElementById('editModal').style.display = 'block';
+        document.getElementById('editModal').style.display = 'flex';
       }
     }
 
@@ -385,37 +326,43 @@
     }
 
     function updateEmployee() {
-      const id = parseInt(document.getElementById('editId').value);
+      const id = +document.getElementById('editId').value;
       const name = document.getElementById('editName').value;
       const position = document.getElementById('editPosition').value;
       const salary = document.getElementById('editSalary').value;
       const index = employees.findIndex(emp => emp.id === id);
       if (index !== -1) {
         employees[index] = { id, name, position, salary };
-        saveEmployees();
-        renderEmployees();
-        updateStats();
+        saveAndRender();
         closeModal();
       }
     }
 
-    document.getElementById('search').addEventListener('input', e => {
-      const term = e.target.value.toLowerCase();
+    function saveAndRender() {
+      localStorage.setItem('employees', JSON.stringify(employees));
+      renderEmployees();
+      updateStats();
+    }
+
+    document.getElementById('search').addEventListener('input', (e) => {
+      const q = e.target.value.toLowerCase();
       const filtered = employees.filter(emp =>
-        emp.name.toLowerCase().includes(term) ||
-        emp.position.toLowerCase().includes(term)
+        emp.name.toLowerCase().includes(q) || emp.position.toLowerCase().includes(q)
       );
       renderEmployees(filtered);
     });
 
-    window.onclick = function(e) {
-      if (e.target === document.getElementById('editModal')) {
-        closeModal();
-      }
-    };
+    window.addEventListener('click', (e) => {
+      const modal = document.getElementById('editModal');
+      if (e.target === modal) closeModal();
+    });
 
     renderEmployees();
     updateStats();
   </script>
+
+  <footer style="text-align:center; padding:10px; background:#fff; margin-top:20px;">
+    &copy; 2025 Employee Management System by Yash Devdhe
+  </footer>
 </body>
 </html>
