@@ -493,5 +493,31 @@
         renderEmployees();
         updateStats();
     </script>
+    // ... existing code ...
+        .about-section p {
+            margin-bottom: 20px;
+            color: #666;
+        }
+        
+        footer {
+            background: #2c3e50;
+            color: white;
+            text-align: center;
+            padding: 20px;
+            margin-top: 40px;
+            font-size: 0.9em;
+        }
+        
+        @media (max-width: 768px) {
+// ... existing code ...
+        </div>
+    </div>
+
+    <footer>
+        &copy; 2024 Employee Management System developed by Yash Devdhe
+    </footer>
+
+    <div id="editModal" class="modal">
+// ... existing code ...
 </body>
 </html>
